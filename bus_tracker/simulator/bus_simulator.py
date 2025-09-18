@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import Dict
 
 # Backend endpoint
-BACKEND_URL = "http://localhost:8000/location"
+BACKEND_URL = "https://bus-tracker-api-ylin.onrender.com"
 
 # Demo buses and route points (interpolate between stops)
 ROUTE_POINTS = [
@@ -59,3 +59,4 @@ if __name__ == "__main__":
     
     for t in threads:
         t.join()
+
