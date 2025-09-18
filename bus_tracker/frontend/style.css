@@ -1,0 +1,14 @@
+body { margin: 0; font-family: Arial, sans-serif; }
+#map { height: 80vh; width: 100%; }
+#info-panel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 200px;
+    z-index: 1000;
+}
+#bus-details { font-size: 12px; }
