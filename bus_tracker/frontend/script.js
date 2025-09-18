@@ -4,7 +4,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const buses = {};  // bus_id -> marker
-const ws = new WebSocket('ws://localhost:8000/ws');
+const ws = new WebSocket('ws://bus-tracker-api-ylin.onrender.com/ws');
 let pollInterval;
 
 ws.onmessage = function(event) {
@@ -42,7 +42,7 @@ function updateInfoPanel(update) {
 function startPolling() {
     pollInterval = setInterval(async () => {
         try {
-            const response = await fetch('http://localhost:8000/buses');  // Add endpoint if needed, or simulate
+            const response = await fetch('https://bus-tracker-api-ylin.onrender.com');  // Add endpoint if needed, or simulate
             // For demo, assume WS handles; extend with /buses GET if offline
             console.log('Polling...');
         } catch (e) {
@@ -60,3 +60,4 @@ const stops = {
 Object.entries(stops).forEach(([name, coords]) => {
     L.marker(coords).addTo(map).bindPopup(`Stop ${name}`);
 });
+
